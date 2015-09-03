@@ -15,7 +15,7 @@
         <packaging>pom</packaging>
         <description>The Databases pom file is a superpom to centralize all third parties</description>
         <url>http://maven.nabla.mobi/dependencies/customs/main/databases</url>
-        
+
         <scm>
                 <connection>scm:svn:http://alban.googlecode.com/svn/${project.svn.path}/databases</connection>
                 <developerConnection>scm:svn:https://alban.googlecode.com/svn/${project.svn.path}/databases</developerConnection>
@@ -35,7 +35,7 @@
 			<!--<hibernate.query.factory.class>org.hibernate.cache.ehcache.EhCacheRegionFactory</hibernate.query.factory.class>-->
 			<hibernate.cache.provider>org.hibernate.cache.HashtableCacheProvider</hibernate.cache.provider> <!-- TODO for hibernate 4 it has changed -->
 		</properties>
-			        
+
         <profiles>
                 <!-- ================= START Database Profiles ================= -->
                 <profile>
@@ -130,17 +130,17 @@
                                 <!-- START DATABASE INFO USE BY ANROMDA -->
                                 <!--
                                         Change this to generate to the correct MDA database mappings, For
-                                        MySql use: 
-                                        MySQL For Hypersonic use: 
-                                        HypersonicSql For Oracle9i use: 
-                                        Oracle9i For DB2 use: 
-                                        DB2 For Informix use: 
-                                        InformixDB For MSSQL use: 
-                                        MSSQL For Pointbase use: 
+                                        MySql use:
+                                        MySQL For Hypersonic use:
+                                        HypersonicSql For Oracle9i use:
+                                        Oracle9i For DB2 use:
+                                        DB2 For Informix use:
+                                        InformixDB For MSSQL use:
+                                        MSSQL For Pointbase use:
                                         PointBase For Postgres use:
-                                        PostgreSQL For Sybase use: 
-                                        Sybase For SapDB use: 
-                                        SapDB For Derby use: 
+                                        PostgreSQL For Sybase use:
+                                        Sybase For SapDB use:
+                                        SapDB For Derby use:
                                         Derby
                                 -->
                                 <sql.mappings>MySQL</sql.mappings>
@@ -295,7 +295,7 @@
                 </profile>
                 <profile>
                         <id>derby</id>
-						<activation>				
+						<activation>
                                 <property>
                                         <name>database</name>
 										<value>derby</value>
@@ -344,13 +344,13 @@
                                 <jdbc.client.url><![CDATA[jdbc:derby:target/${database.name};create=true]]></jdbc.client.url>
                                 <jdbc.embedded.url>${jdbc.client.url}</jdbc.embedded.url>
                                 <jdbc.url>${jdbc.embedded.url}</jdbc.url>
-                                
+
                                 <jdbc.driver.lib>${settings.localRepository}/org/apache/derby/${jdbc.artifactId}/${jdbc.version}</jdbc.driver.lib>
                                 <jdbc.driver.jar>${jdbc.driver.lib}/${jdbc.artifactId}-${jdbc.version}.jar</jdbc.driver.jar>
 
                                 <jdbc.username>user</jdbc.username>
                                 <jdbc.password>user</jdbc.password>
-                                
+
                                 <hibernate.dialect>org.hibernate.dialect.DerbyDialect</hibernate.dialect>
                                 <jboss.typeMappings>Derby</jboss.typeMappings>
                                 <datasource.name>${application.id}</datasource.name>
@@ -393,16 +393,16 @@
                         </dependencies>
                 </profile>
                 <profile>
-                        <id>h2</id>	     		
+                        <id>h2</id>
 						<activation>
 								<activeByDefault>true</activeByDefault>
-                                <property>  
-                                	<!--                              	
+                                <property>
+                                	<!--
                                         <name>database</name>
 										<value>h2</value>
 										-->
-                                        <name>!database</name>					
-                                </property>                            
+                                        <name>!database</name>
+                                </property>
 						</activation>
                         <properties>
                                 <database>h2</database>
@@ -425,7 +425,7 @@
                                 <database.port></database.port>
                                 <!-- See http://www.h2database.com/html/features.html#database_url (mixed mode) -->
                                 <!--<jdbc.url><![CDATA[jdbc:h2:tutorial-service]]></jdbc.url> -->
-                                <jdbc.url>jdbc:h2:target/${database.name};AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</jdbc.url>
+                                <jdbc.url>jdbc:h2:./target/${database.name};AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</jdbc.url>
                                 <!-- JBoss5 gives classloader exceptions if the JDBC driver is bundled with the EAR -->
                                 <jdbc.driver.lib>${settings.localRepository}/com/h2database/${jdbc.artifactId}/${jdbc.version}</jdbc.driver.lib>
                                 <jdbc.driver.jar>${jdbc.driver.lib}/${jdbc.artifactId}-${jdbc.version}.jar</jdbc.driver.jar>
@@ -443,7 +443,7 @@
                                         <artifactId>${jdbc.client.artifactId}</artifactId>
                                         <version>${jdbc.version}</version>
                                         <scope>provided</scope>
-                                </dependency>                          
+                                </dependency>
                         </dependencies>
                 </profile>
                 <profile>
@@ -571,7 +571,7 @@
                                         <version>${jdbc.version}</version>
                                         <scope>provided</scope>
                                 </dependency>
-                        </dependencies>                        
+                        </dependencies>
                 </profile>
                 <profile>
                         <!--
@@ -606,7 +606,7 @@
                                         <version>${jdbc.version}</version>
                                         <scope>provided</scope>
                                 </dependency>
-                        </dependencies>                           
+                        </dependencies>
                 </profile>
                 <!-- ================= END Database Profiles ================= -->
 
@@ -618,24 +618,24 @@
 								Maven 3.x (see MNG-2363) -->
 							<exists>${basedir}</exists>
 						</file>
-					</activation>			
+					</activation>
 					<build>
 						<!-- To use the plugin goals in your POM or parent POM -->
-						
+
 						<plugins>
 						  <plugin>
 							<groupId>org.codehaus.mojo</groupId>
 							<artifactId>sonar-maven-plugin</artifactId>
 						  </plugin>
-						</plugins>	
-						</build>		
+						</plugins>
+						</build>
 					<properties>
 						<!-- sonar user admin password admin -->
 						<!--
 						<sonar.jdbc.url>jdbc:derby://localhost:${sonar.derby.port}/sonar;create=true</sonar.jdbc.url>
 						<sonar.jdbc.driver>org.apache.derby.jdbc.ClientDriver</sonar.jdbc.driver>
-						-->				
-						<sonar.jdbc.url><![CDATA[jdbc:mysql://localhost:${sonar.mysql.port}/sonar?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8]]></sonar.jdbc.url>		
+						-->
+						<sonar.jdbc.url><![CDATA[jdbc:mysql://localhost:${sonar.mysql.port}/sonar?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8]]></sonar.jdbc.url>
 						<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
 						<sonar.jdbc.defaultTransactionIsolation>1</sonar.jdbc.defaultTransactionIsolation>
 						<!--
