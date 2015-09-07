@@ -17,11 +17,14 @@
 
 	<dependencies>
 		<!-- TODO remove old spring version -->
+		<!--
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		-->
+
         <!--
         <dependency>
         	<groupId>org.springframework</groupId>
@@ -44,14 +47,16 @@
 		<dependency>
 			<groupId>batik</groupId>
 			<artifactId>batik-ext</artifactId>
-			<version>${batik.ext.version}</version>    
-		</dependency>		
-        	
+			<version>${batik.ext.version}</version>
+		</dependency>
+
 		<!-- used by org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver -->
+		<!--
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-agent</artifactId>
 		</dependency>
+		-->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -60,16 +65,16 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-		</dependency>		
+		</dependency>
 		<!--
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-		</dependency>		
+		</dependency>
 		-->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -134,7 +139,7 @@
 		<!--
 		<dependency>
 			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate</artifactId> 
+			<artifactId>hibernate</artifactId>
 			<version>${hibernate.legacy.version}</version>
 			<type>jar</type>
 			<scope>compile</scope>
@@ -152,13 +157,13 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>${hibernate.legacy.validator.version}</version>
 			<scope>compile</scope>
-		</dependency>				
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.legacy.core.version}</version>
 			<scope>compile</scope>
-		</dependency>			
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -166,7 +171,7 @@
 			<version>${hibernate.legacy.entitymanager.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>asm</groupId>
 			<artifactId>asm</artifactId>

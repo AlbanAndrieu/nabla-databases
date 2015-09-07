@@ -18,7 +18,7 @@ import com.nabla.database.person.entites.Address;
 import com.nabla.database.person.entites.Person;
 import com.nabla.database.person.service.IService;
 
-public class TestNG extends TestCase
+public class TestDatabase extends TestCase
 {
 
     @Override
@@ -69,7 +69,7 @@ public class TestNG extends TestCase
      * 
      * @param testName name of the test case
      */
-    public TestNG(final String testName)
+    public TestDatabase(final String testName)
     {
         super(testName);
     }
@@ -347,6 +347,6 @@ public class TestNG extends TestCase
      */
     public static Test suite()
     {
-        return new TestSuite(TestNG.class);
+        return new TestSuite(TestDatabase.class);
     }
 }
