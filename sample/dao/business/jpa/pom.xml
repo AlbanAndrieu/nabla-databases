@@ -48,13 +48,13 @@
 			<scope>compile</scope>
 		</dependency>
 		-->
-							
+
 		<dependency>
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- 
+		<!--
 		<dependency>
 			<groupId>org.jmock</groupId>
 			<artifactId>jmock-junit4</artifactId>
@@ -71,6 +71,12 @@
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+        <dependency>
+            <groupId>com.github.stephenc.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 		<dependency>
 			<groupId>${jdbc.groupId}</groupId>

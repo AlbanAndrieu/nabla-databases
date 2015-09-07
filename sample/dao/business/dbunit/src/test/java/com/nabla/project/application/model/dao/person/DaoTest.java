@@ -5,14 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import junit.framework.Assert;
-
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 
 import com.nabla.project.application.model.person.dao.IPersonDAO;
 import com.nabla.project.application.model.person.entity.Person;
 import com.nabla.project.application.time.Chronometer;
 
+@net.jcip.annotations.NotThreadSafe
 public class DaoTest extends AbstractDaoDatabase
 {
     public static Logger logger  = Logger.getLogger(DaoTest.class);

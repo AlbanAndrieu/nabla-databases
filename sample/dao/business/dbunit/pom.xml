@@ -169,7 +169,7 @@
 			<scope>compile</scope>
 		</dependency>
 		-->
-		
+
 		<dependency>
 			<groupId>org.dbunit</groupId>
 			<artifactId>dbunit</artifactId>
@@ -182,7 +182,7 @@
 			<artifactId>easymock</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- 
+		<!--
 		<dependency>
 			<groupId>org.jmock</groupId>
 			<artifactId>jmock-junit4</artifactId>
@@ -201,18 +201,24 @@
 			<scope>test</scope>
 		</dependency>
 
+        <dependency>
+            <groupId>com.github.stephenc.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <scope>test</scope>
+        </dependency>
+
 		<!-- batik avoid java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal -->
 		<dependency>
 			<groupId>batik</groupId>
 			<artifactId>batik-ext</artifactId>
-			<version>${batik.ext.version}</version>    
-		</dependency>	
+			<version>${batik.ext.version}</version>
+		</dependency>
 		<!--
 		<dependency>
 			<groupId>${jdbc.groupId}</groupId>
 			<artifactId>${jdbc.artifactId}</artifactId>
 			<version>${jdbc.version}</version>
-		</dependency>		 
+		</dependency>
 		-->
 	</dependencies>
 
@@ -220,7 +226,7 @@
 	<properties>
 		<maven.test.skip>false</maven.test.skip>
 		<database.name>myDBDBUnit</database.name>
-		
+
 		<!-- Database settings override to Derby -->
 		<dbunit.dataTypeFactoryName>org.dbunit.dataset.datatype.DefaultDataTypeFactory</dbunit.dataTypeFactoryName>
 		<dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type>
@@ -241,6 +247,6 @@
 		<jdbc.url><![CDATA[jdbc:derby:~/${database.name};create=true]]></jdbc.url>
 		<!-- -->
 		<jdbc.username>user</jdbc.username>
-		<jdbc.password>user</jdbc.password>		
+		<jdbc.password>user</jdbc.password>
 	</properties>
 </project>

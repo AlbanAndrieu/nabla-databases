@@ -62,20 +62,20 @@
 			<artifactId>appfuse-${dao.framework}</artifactId>
 			<version>${appfuse.version}</version>
 		</dependency>
-		
-		<!-- 
+
+		<!--
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring</artifactId>
 			<scope>compile</scope>
-		</dependency>	
+		</dependency>
 		-->
-		
+
 		<dependency>
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<scope>test</scope>
-		</dependency>	
+		</dependency>
 		<!--
 		<dependency>
 			<groupId>org.jmock</groupId>
@@ -94,12 +94,20 @@
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+        <dependency>
+            <groupId>com.github.stephenc.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
 		<!-- batik avoid java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal -->
 		<dependency>
-            		<groupId>batik</groupId>
-            		<artifactId>batik-ext</artifactId>
-            		<version>${batik.ext.version}</version>    
-        	</dependency>		
+           	<groupId>batik</groupId>
+           	<artifactId>batik-ext</artifactId>
+           	<version>${batik.ext.version}</version>
+        </dependency>
 <!--
                <dependency>
                         <groupId>org.springframework</groupId>
@@ -123,10 +131,10 @@
 			<artifactId>${jdbc.artifactId}</artifactId>
 			<version>${jdbc.version}</version>
 		</dependency>
--->		
+-->
 	</dependencies>
 
-	<profiles>		
+	<profiles>
 		<profile>
 			<id>create_db</id>
 			<properties>
@@ -146,7 +154,7 @@
 									<outputDirectory>${target.dir}/site/hibernate3</outputDirectory>
 									<!--<implementation>jpaconfiguration</implementation> -->
 									<!--<implementation>jdbcconfiguration</implementation> -->
-									<implementation>annotationconfiguration</implementation> 
+									<implementation>annotationconfiguration</implementation>
 								</component>
 							</components>
 							<componentProperties>
@@ -395,7 +403,7 @@
 								<!--<implementation>jpaconfiguration</implementation>-->
 								<drop>true</drop>
 								<create>true</create>
-								<export>true</export> 
+								<export>true</export>
                                                                 <configurationfile>${target.dir}/classes/hibernate.cfg.xml</configurationfile>
 								<propertyfile>${target.dir}/classes/jdbc.properties</propertyfile>
                                                                 <revengfile>src/main/resources/hibernate/${database}/hibernate.reveng.xml</revengfile>
@@ -527,7 +535,7 @@
                 <profile>
                         <id>sql</id>
                         <properties>
-				<!--<maven.test.skip>false</maven.test.skip>-->        
+				<!--<maven.test.skip>false</maven.test.skip>-->
 				<jdbc.client.url><![CDATA[jdbc:derby:~/${database.name}]]></jdbc.client.url>
 			</properties>
                         <build>
@@ -587,7 +595,7 @@
                                                                         <onError>continue</onError>
                                                                 </configuration>
                                                         </execution>
-                                                       
+
                                                         <execution>
                                                                 <id>create-schema</id>
                                                                 <phase>process-test-resources</phase>
@@ -612,7 +620,7 @@
                                                                 	<autocommit>true</autocommit>
                                                                 	<srcFiles>
                                                                 		<srcFile>sql/create-schema.sql</srcFile>
-                                                                	</srcFiles>                                                                	
+                                                                	</srcFiles>
                                                                 	<onError>continue</onError>
                                                                 </configuration>
                                                                 </execution>
@@ -667,7 +675,7 @@
                                                                 </configuration>
                                                         </execution>
                                                         -->
-                                                        
+
                                                         <!-- drop db after test -->
                                                         <execution>
                                                                 <id>drop-schema-after-test</id>
@@ -680,7 +688,7 @@
                                                                         <sqlCommand>DROP SCHEMA APP RESTRICT</sqlCommand>
                                                                         <onError>continue</onError>
                                                                 </configuration>
-                                                        </execution>                                                      
+                                                        </execution>
 
 							<!--
                                                         <execution>
@@ -707,7 +715,7 @@
 							<!--<skip>${maven.test.skip}</skip>-->
 							<skip>true</skip>
 						</configuration>
-					</plugin>                                        
+					</plugin>
                                 </plugins>
                         </build>
                 </profile>

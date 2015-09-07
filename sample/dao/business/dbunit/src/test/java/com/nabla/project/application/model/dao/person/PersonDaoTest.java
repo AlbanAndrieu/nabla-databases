@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.apache.log4j.Logger;
 import org.springframework.orm.ObjectRetrievalFailureException;
@@ -14,6 +14,7 @@ import com.nabla.project.application.model.person.dao.IPersonDAO;
 import com.nabla.project.application.model.person.entity.Address;
 import com.nabla.project.application.model.person.entity.Person;
 
+@net.jcip.annotations.NotThreadSafe
 public class PersonDaoTest extends AbstractDaoDatabase
 {
 

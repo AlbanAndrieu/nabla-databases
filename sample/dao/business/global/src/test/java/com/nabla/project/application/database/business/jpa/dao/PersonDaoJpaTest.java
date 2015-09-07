@@ -16,6 +16,7 @@ import com.nabla.project.application.database.business.global.dao.IPersonDao;
 import com.nabla.project.application.database.business.global.model.Address;
 import com.nabla.project.application.database.business.global.model.Person;
 
+@net.jcip.annotations.NotThreadSafe
 public class PersonDaoJpaTest extends BaseDaoTestCase
 {
     @Autowired
