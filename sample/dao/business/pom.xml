@@ -125,7 +125,7 @@
 
 				</dependencies>
 	</dependencyManagement>
-	--
+	-->
 	<profiles>
 		<!-- ================= START Persistence Profiles ================= -->
 		<profile>
