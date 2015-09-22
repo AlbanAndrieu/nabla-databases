@@ -16,12 +16,12 @@
         <description>The Databases pom file is a superpom to centralize all third parties</description>
         <url>http://maven.nabla.mobi/dependencies/customs/main/databases</url>
 
-        <scm>
-                <connection>scm:svn:http://alban.googlecode.com/svn/${project.svn.path}/databases</connection>
-                <developerConnection>scm:svn:https://alban.googlecode.com/svn/${project.svn.path}/databases</developerConnection>
-                <url>https://alban.googlecode.com/svn/${project.svn.path}/databases</url>
-                <tag>HEAD</tag>
-        </scm>
+    	<scm>
+		<connection>scm:git:git://github.com/AlbanAndrieu/nabla-databases.git</connection>
+		<developerConnection>scm:git:git@github.com:AlbanAndrieu/nabla-databases.git</developerConnection>
+		<url>https://github.com/AlbanAndrieu/nabla-databases</url>
+		<tag>HEAD</tag>			
+    	</scm>
 
         <ciManagement>
                 <system>Jenkins</system>
