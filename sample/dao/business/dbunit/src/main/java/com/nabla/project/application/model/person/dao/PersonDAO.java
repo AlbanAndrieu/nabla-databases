@@ -12,7 +12,7 @@ import com.nabla.project.application.model.person.entity.Person;
 
 /**
  * Data access object (DAO) for domain model class Person.
- * 
+ *
  * @see com.nabla.project.application.model.dao.person.entity.Person
  * @author MyEclipse Persistence Tools
  */

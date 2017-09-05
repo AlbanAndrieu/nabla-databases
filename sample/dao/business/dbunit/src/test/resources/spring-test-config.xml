@@ -9,11 +9,11 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
 	<import resource="spring-config.xml"/>
-		
+
 	<bean id="testDao" class="com.nabla.project.application.model.person.dao.PersonDAO"  scope="prototype"/>
-	
+
 	<bean id="dao" class="com.nabla.project.application.model.person.dao.Dao" />
-		
+
 	<bean id="service" class="com.nabla.project.application.model.person.service.Service">
 		<property name="dao" ref="dao" />
 	</bean>

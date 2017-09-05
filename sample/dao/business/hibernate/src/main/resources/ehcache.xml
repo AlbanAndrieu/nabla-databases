@@ -48,6 +48,6 @@
         timeToLiveSeconds="120"
         diskPersistent="false"
         diskExpiryThreadIntervalSeconds="120"/>
-        
+
     <!-- See http://ehcache.sourceforge.net/documentation/#mozTocId258426 for how to configure caching for your objects -->
 </ehcache>

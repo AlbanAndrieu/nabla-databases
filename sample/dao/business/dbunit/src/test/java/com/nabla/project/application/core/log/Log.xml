@@ -19,7 +19,7 @@
 		</property>
 	</bean>
 
-	<!-- 
+	<!--
 		<bean name="daoLog"
 		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 		<property name="targetClass"
@@ -31,16 +31,16 @@
 		</list>
 		</property>
 		</bean>
-		
+
 		<bean name="abstractDao" abstract="true">
 		<property name="log" ref="daoLog" />
 		</bean>
-		
+
 		<bean name="userDao"
 		class="com.nabla.project.application.core.log.UserDao"
 		parent="abstractDao" />
 	-->
-	
+
 	<!-- Add the following to the Spring appContext.xml to force Spring to pick up a Log4j configuration file from a specified location. -->
 	<bean id="log4jInitialization"
 		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
@@ -61,7 +61,7 @@
 		class="org.springframework.beans.factory.config.CommonsLogFactoryBean">
 		<property name="logName" value="mylogger" />
 	</bean>
-	<!-- 
+	<!--
 		<bean id="placeholderConfig"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location">

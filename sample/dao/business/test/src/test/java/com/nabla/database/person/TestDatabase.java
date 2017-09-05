@@ -66,7 +66,7 @@ public class TestDatabase extends TestCase
 
     /**
      * Create the test case
-     * 
+     *
      * @param testName name of the test case
      */
     public TestDatabase(final String testName)

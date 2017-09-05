@@ -20,7 +20,7 @@
 		<connection>scm:git:git://github.com/AlbanAndrieu/nabla-databases.git</connection>
 		<developerConnection>scm:git:git@github.com:AlbanAndrieu/nabla-databases.git</developerConnection>
 		<url>https://github.com/AlbanAndrieu/nabla-databases</url>
-		<tag>HEAD</tag>			
+		<tag>HEAD</tag>
     	</scm>
 
         <ciManagement>

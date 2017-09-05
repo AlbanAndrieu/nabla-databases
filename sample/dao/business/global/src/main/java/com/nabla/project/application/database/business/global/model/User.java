@@ -69,7 +69,7 @@ public class User extends BaseObject implements Serializable, UserDetails
 
     /**
      * Create a new instance and set the username.
-     * 
+     *
      * @param username login name for user.
      */
     public User(final String username)
@@ -148,7 +148,7 @@ public class User extends BaseObject implements Serializable, UserDetails
 
     /**
      * Returns the full name.
-     * 
+     *
      * @return firstName + ' ' + lastName
      */
     @Transient
@@ -176,7 +176,7 @@ public class User extends BaseObject implements Serializable, UserDetails
 
     /**
      * Convert user roles to LabelValue objects for convenience.
-     * 
+     *
      * @return a list of LabelValue objects with role information
      */
     @Transient
@@ -198,7 +198,7 @@ public class User extends BaseObject implements Serializable, UserDetails
 
     /**
      * Adds a role for the user
-     * 
+     *
      * @param role the fully instantiated role
      */
     public void addRole(final Role role)
