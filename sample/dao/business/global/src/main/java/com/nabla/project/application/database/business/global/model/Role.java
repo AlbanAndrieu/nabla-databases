@@ -40,7 +40,7 @@ public class Role extends BaseObject implements Serializable, GrantedAuthority
 
     /**
      * Create a new instance and set the name.
-     * 
+     *
      * @param name name of the role.
      */
     public Role(final String name)

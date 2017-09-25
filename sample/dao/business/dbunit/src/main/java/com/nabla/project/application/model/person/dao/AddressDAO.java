@@ -9,7 +9,7 @@ import com.nabla.project.application.model.person.entity.Address;
 
 /**
  * Data access object (DAO) for domain model class Address.
- * 
+ *
  * @see com.nabla.project.application.model.dao.person.entity.Address
  * @author MyEclipse Persistence Tools
  */

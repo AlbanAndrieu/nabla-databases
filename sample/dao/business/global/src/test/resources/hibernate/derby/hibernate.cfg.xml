@@ -18,5 +18,5 @@
 		<mapping class="com.nabla.project.application.database.business.global.model.Address" />
 		<mapping class="com.nabla.project.application.database.business.global.model.Activity" />
 	</session-factory>
-	
+
 </hibernate-configuration>

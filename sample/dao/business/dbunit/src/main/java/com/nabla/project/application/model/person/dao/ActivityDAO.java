@@ -11,7 +11,7 @@ import com.nabla.project.application.model.person.entity.Activity;
 
 /**
  * Data access object (DAO) for domain model class Activity.
- * 
+ *
  * @see com.nabla.project.application.model.dao.person.entity.Activity
  * @author MyEclipse Persistence Tools
  */

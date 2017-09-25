@@ -23,7 +23,7 @@
 				value="jdbc:derby:K:\workspace\project\application\database\business\global\myDBGlobal;create=true;" />
 		</properties>
 	</persistence-unit>
-	<!-- 
+	<!--
 		<persistence-unit name="default">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
@@ -32,7 +32,7 @@
 	<!--
 		<property name="hibernate.archive.autodetection"
 		value="class" />
-		
+
 	-->
 	<!-- Datasource -->
 	<!--
@@ -44,7 +44,7 @@
 		<property name="hibernate.connection.password" value="APP" />
 		<property name="hibernate.connection.url"
 		value="jdbc:derby:~/myDBGlobal;create=true;" />
-		
+
 	-->
 	<!--
 		<property name="hibernate.dialect"
