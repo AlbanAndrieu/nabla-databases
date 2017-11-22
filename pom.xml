@@ -34,7 +34,7 @@
 			<hibernate.cache.region.factory.class>net.sf.ehcache.hibernate.EhCacheRegionFactory</hibernate.cache.region.factory.class>
 			<!--<hibernate.query.factory.class>org.hibernate.cache.ehcache.EhCacheRegionFactory</hibernate.query.factory.class>-->
 			<hibernate.cache.provider>org.hibernate.cache.HashtableCacheProvider</hibernate.cache.provider> <!-- TODO for hibernate 4 it has changed -->
-			<ehcache.core.version>2.10.4</ehcache.core.version>
+			<ehcache.core.version>2.4.7</ehcache.core.version>
 		</properties>
 
         <profiles>
