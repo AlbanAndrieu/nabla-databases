@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-	<parent>
-		<groupId>com.nabla.project.databases.sample.dao</groupId>
-		<artifactId>dao</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
-	</parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<name>Databases DOA Business</name>
+
+	<parent>
+		<artifactId>dao</artifactId>
+		<groupId>com.nabla.project.databases.sample.dao</groupId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
 	<groupId>com.nabla.project.databases.sample.dao.business</groupId>
 	<artifactId>business</artifactId>
 	<packaging>pom</packaging>
+	<name>Databases DOA Business</name>
 	<modules>
 		<!-- <module>appfuse</module> -->
 		<module>test</module>
@@ -27,7 +26,7 @@
 	<dependencyManagement>
 				<dependencies>
 				    -->
-					<!--
+	<!--
 					<dependency>
 						<groupId>org.springframework</groupId>
 						<artifactId>spring-framework-bom</artifactId>
@@ -37,7 +36,7 @@
 					</dependency>
 					-->
 
-					<!--
+	<!--
 					<dependency>
 							<groupId>org.springframework</groupId>
 							<artifactId>spring</artifactId>
@@ -157,7 +156,7 @@
 					<version>${hibernate.legacy.version}</version>
 					<type>jar</type>
 					<scope>compile</scope>
-<!--
+					<!--
 					<exclusions>
 						<exclusion>
 							<groupId>javax.transaction</groupId>
@@ -178,6 +177,38 @@
 					</exclusions>
 				-->
 				</dependency>
+				<dependency>
+					<groupId>org.hibernate</groupId>
+					<artifactId>hibernate-annotations</artifactId>
+					<version>${hibernate.annotations.version}</version>
+					<scope>compile</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>asm</groupId>
+					<artifactId>asm</artifactId>
+					<version>${asm.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>cglib</groupId>
+					<artifactId>cglib-nodep</artifactId>
+					<version>${cglib.nodep.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>javax.transaction</groupId>
+					<artifactId>jta</artifactId>
+					<version>${javax.transaction.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>javassist</groupId>
+					<artifactId>javassist</artifactId>
+					<version>${javassist.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>commons-dbcp</groupId>
+					<artifactId>commons-dbcp</artifactId>
+					<version>${commons.dbcp.version}</version>
+				</dependency>
 				<!--
 				<dependency>
 						<groupId>org.hibernate</groupId>
@@ -185,10 +216,10 @@
 						<version>${hibernate.legacy.validator.version}</version>
 						<scope>provided</scope>
 						-->
-						<!-- Some transitive dependencies of Hibernate 3 are available
+				<!-- Some transitive dependencies of Hibernate 3 are available
 							in JBoss AS 7 as modules, so we don't include them in WEB-INF/lib, but instead
 							depend on the modules -->
-						<!--
+				<!--
 						<exclusions>
 							<exclusion>
 								<groupId>org.slf4j</groupId>
@@ -267,38 +298,6 @@
 					<artifactId>hibernate-entitymanager</artifactId>
 					<version>${hibernate.legacy.entitymanager.version}</version>
 					<scope>provided</scope>
-				</dependency>
-				<dependency>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-annotations</artifactId>
-					<version>${hibernate.annotations.version}</version>
-					<scope>compile</scope>
-				</dependency>
-
-				<dependency>
-					<groupId>asm</groupId>
-					<artifactId>asm</artifactId>
-					<version>${asm.version}</version>
-				</dependency>
-				<dependency>
-					<groupId>cglib</groupId>
-					<artifactId>cglib-nodep</artifactId>
-					<version>${cglib.nodep.version}</version>
-				</dependency>
-				<dependency>
-					<groupId>javax.transaction</groupId>
-					<artifactId>jta</artifactId>
-					<version>${javax.transaction.version}</version>
-				</dependency>
-				<dependency>
-		        	<groupId>javassist</groupId>
-					<artifactId>javassist</artifactId>
-		        	<version>${javassist.version}</version>
-		        </dependency>
-				<dependency>
-					<groupId>commons-dbcp</groupId>
-					<artifactId>commons-dbcp</artifactId>
-					<version>${commons.dbcp.version}</version>
 				</dependency>
 			</dependencies>
 

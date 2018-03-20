@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-	<parent>
-		<groupId>com.nabla.project.databases.sample.dao.business</groupId>
-		<artifactId>business</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
-	</parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<name>Databases DAO test</name>
+
+	<parent>
+		<artifactId>business</artifactId>
+		<groupId>com.nabla.project.databases.sample.dao.business</groupId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
 	<groupId>com.nabla.project.databases.sample.dao.business.test</groupId>
 	<artifactId>test</artifactId>
 	<packaging>jar</packaging>
+	<name>Databases DAO test</name>
 	<description>Database DAO Test : Test Spring Jpa Hibernate and Derby compatibility</description>
+
+	<!-- ================= Default Properties ================= -->
+	<properties>
+		<database.name>myDBTest</database.name>
+		<maven.test.skip>false</maven.test.skip>
+	</properties>
 
 	<dependencies>
 		<!-- TODO remove old spring version -->
@@ -25,7 +30,7 @@
 		</dependency>
 		-->
 
-        <!--
+		<!--
         <dependency>
         	<groupId>org.springframework</groupId>
             <artifactId>spring-jpa</artifactId>
@@ -82,38 +87,30 @@
 			<!-- <version>${spring.mock.version}</version> -->
 		</dependency>
 
-		<!-- Used by org.apache.commons.dbcp.BasicDataSource pool de connexions comme c3p0 -->
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<!-- <version>1.2.1</version> -->
-			<scope>runtime</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>jboss</groupId>
 			<artifactId>jboss-common-core</artifactId>
 			<version>${jboss.common.version}</version>
 			<exclusions>
 				<exclusion>
-					<groupId>apache-xerces</groupId>
 					<artifactId>xml-apis</artifactId>
+					<groupId>apache-xerces</groupId>
 				</exclusion>
 				<exclusion>
-					<groupId>apache-httpclient</groupId>
 					<artifactId>commons-httpclient</artifactId>
+					<groupId>apache-httpclient</groupId>
 				</exclusion>
 				<exclusion>
-					<groupId>oswego-concurrent</groupId>
 					<artifactId>concurrent</artifactId>
+					<groupId>oswego-concurrent</groupId>
 				</exclusion>
 				<exclusion>
-					<groupId>apache-slide</groupId>
 					<artifactId>webdavlib</artifactId>
+					<groupId>apache-slide</groupId>
 				</exclusion>
 				<exclusion>
-					<groupId>jboss</groupId>
 					<artifactId>jboss-common-logging-spi</artifactId>
+					<groupId>jboss</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -187,13 +184,21 @@
 			<artifactId>jta</artifactId>
 			<!-- <version>${javax.transaction.version}</version> -->
 		</dependency>
-        <dependency>
+		<dependency>
 			<groupId>javassist</groupId>
-		    <artifactId>javassist</artifactId>
-		    <!-- <version>${javassist.version}</version> -->
+			<artifactId>javassist</artifactId>
+			<!-- <version>${javassist.version}</version> -->
 		</dependency>
 
-                <!--
+		<!-- Used by org.apache.commons.dbcp.BasicDataSource pool de connexions comme c3p0 -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<!-- <version>1.2.1</version> -->
+			<scope>runtime</scope>
+		</dependency>
+
+		<!--
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
@@ -203,28 +208,22 @@
 		-->
 	</dependencies>
 
-	<!-- ================= Default Properties ================= -->
-	<properties>
-		<maven.test.skip>false</maven.test.skip>
-		<database.name>myDBTest</database.name>
-	</properties>
-
 	<profiles>
 		<profile>
 			<id>mysql</id>
 			<properties>
 				<database>mysql</database>
-				<hibernate.dialect>org.hibernate.dialect.MySQLInnoDBDialect</hibernate.dialect>
 				<dbunit.schema>APP</dbunit.schema>
-				<jdbc.groupId>mysql</jdbc.groupId>
+				<hibernate.dialect>org.hibernate.dialect.MySQLInnoDBDialect</hibernate.dialect>
 				<jdbc.client.artifactId>mysql-connector-java</jdbc.client.artifactId>
-				<jdbc.version>5.0.4</jdbc.version>
-				<jdbc.username>sa</jdbc.username>
-				<jdbc.password></jdbc.password>
-				<jdbc.driver>${jdbc.client.driver}</jdbc.driver>
 				<!-- jdbc:mysql://localhost:3306/myDB -->
 				<jdbc.client.url><![CDATA[jdbc:mysql://${database.host}:${database.port}/${database.name}]]></jdbc.client.url>
+				<jdbc.driver>${jdbc.client.driver}</jdbc.driver>
+				<jdbc.groupId>mysql</jdbc.groupId>
+				<jdbc.password></jdbc.password>
 				<jdbc.url>${jdbc.client.url}</jdbc.url>
+				<jdbc.username>sa</jdbc.username>
+				<jdbc.version>5.0.4</jdbc.version>
 			</properties>
 			<dependencies>
 				<!-- com.mysql.jdbc.Driver -->
@@ -246,21 +245,21 @@
 			</activation>
 			<properties>
 				<database>derby</database>
-				<hibernate.dialect>org.hibernate.dialect.DerbyDialect</hibernate.dialect>
 				<dbunit.schema>APP</dbunit.schema>
-				<jdbc.groupId>org.apache.derby</jdbc.groupId>
+				<hibernate.dialect>org.hibernate.dialect.DerbyDialect</hibernate.dialect>
 				<jdbc.client.artifactId>derbyclient</jdbc.client.artifactId>
-				<jdbc.embedded.artifactId>derby</jdbc.embedded.artifactId>
-				<jdbc.version>${jdbc.derby.version}</jdbc.version>
-				<jdbc.username>user</jdbc.username>
-				<jdbc.password>user</jdbc.password>
-				<jdbc.embedded.driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc.embedded.driver>
 				<jdbc.client.driver>org.apache.derby.jdbc.ClientDriver</jdbc.client.driver>
-				<jdbc.driver>${jdbc.embedded.driver}</jdbc.driver>
 				<!-- jdbc:mysql://localhost:3306/myDB -->
 				<jdbc.client.url><![CDATA[jdbc:derby:~/${database.name};create=true]]></jdbc.client.url>
+				<jdbc.driver>${jdbc.embedded.driver}</jdbc.driver>
+				<jdbc.embedded.artifactId>derby</jdbc.embedded.artifactId>
+				<jdbc.embedded.driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc.embedded.driver>
 				<jdbc.embedded.url>${jdbc.client.url}</jdbc.embedded.url>
+				<jdbc.groupId>org.apache.derby</jdbc.groupId>
+				<jdbc.password>user</jdbc.password>
 				<jdbc.url>${jdbc.embedded.url}</jdbc.url>
+				<jdbc.username>user</jdbc.username>
+				<jdbc.version>${jdbc.derby.version}</jdbc.version>
 			</properties>
 			<dependencies>
 				<dependency>
@@ -284,7 +283,7 @@
 					<scope>compile</scope>
 				</dependency>
 				<!-- org.apache.derby.jdbc.ClientDriver -->
-                                <!--
+				<!--
                                 <dependency>
                                         <groupId>${jdbc.groupId}</groupId>
                                         <artifactId>${jdbc.client.artifactId}</artifactId>
@@ -306,8 +305,8 @@
 				<!-- necessary to enable replacement of property placeholders -->
 				<resources>
 					<resource>
-						<directory>${basedir}/src/main/resources/hibernate/${database}</directory>
 						<filtering>true</filtering>
+						<directory>${basedir}/src/main/resources/hibernate/${database}</directory>
 						<includes>
 							<include>**/*.xml</include>
 							<include>**/*.properties</include>
@@ -316,8 +315,8 @@
 				</resources>
 				<testResources>
 					<testResource>
-						<directory>${basedir}/src/test/resources/hibernate/${database}</directory>
 						<filtering>true</filtering>
+						<directory>${basedir}/src/test/resources/hibernate/${database}</directory>
 						<includes>
 							<include>**/*.xml</include>
 							<include>**/*.properties</include>
@@ -339,6 +338,11 @@
 		<profile>
 			<id>openjpa</id>
 			<build>
+				<resources>
+					<resource>
+						<directory>${basedir}/src/main/resources/openjpa</directory>
+					</resource>
+				</resources>
 				<plugins>
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
@@ -365,11 +369,6 @@
 						</executions>
 					</plugin>
 				</plugins>
-				<resources>
-					<resource>
-						<directory>${basedir}/src/main/resources/openjpa</directory>
-					</resource>
-				</resources>
 			</build>
 		</profile>
 
@@ -412,7 +411,7 @@
 			</build>
 		</profile>
 	</profiles>
-<!--
+	<!--
 	<reporting>
 		<plugins>
 			<plugin>
