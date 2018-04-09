@@ -36,6 +36,7 @@
 		<!-- For Hibernate 4, use org.hibernate.cache.ehcache.EhCacheRegionFactory instead of net.sf.ehcache.hibernate.EhCacheRegionFactory and org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory instead of net.sf.ehcache.hibernate.SingletonEhCacheRegionFactory -->
 		<hibernate.cache.region.factory.class>net.sf.ehcache.hibernate.EhCacheRegionFactory</hibernate.cache.region.factory.class>
 		<spring.version>${spring3.version}</spring.version>
+		<jdbc.derby.version>10.12.1.1</jdbc.derby.version> <!--issue with 10.14.1.0 set DatabaseConfig.FEATURE_ALLOW_EMPTY_FIELDS to true)-->
 	</properties>
 
 	<profiles>
