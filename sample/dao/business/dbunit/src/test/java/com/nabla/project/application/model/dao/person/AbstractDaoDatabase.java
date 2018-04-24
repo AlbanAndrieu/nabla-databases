@@ -5,6 +5,7 @@ import java.sql.Connection;
 import javax.sql.DataSource;
 
 import org.apache.log4j.Logger;
+import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
@@ -48,6 +49,8 @@ public class AbstractDaoDatabase extends AbstractTransactionalDataSourceSpringCo
         final DataSource ds = this.jdbcTemplate.getDataSource();
         final Connection con = DataSourceUtils.getConnection(ds);
         final IDatabaseConnection dbUnitCon = new DatabaseConnection(con);
+        DatabaseConfig dbCfg = dbUnitCon.getConfig(); 
+        dbCfg.setProperty(DatabaseConfig.FEATURE_ALLOW_EMPTY_FIELDS, Boolean.TRUE);
         final IDataSet dataSet = new FlatXmlDataSet(Thread.currentThread().getContextClassLoader().getResourceAsStream(AbstractDaoDatabase.TEST_DATA_FILE));
 
         // delete table entries
