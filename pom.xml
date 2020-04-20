@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<artifactId>main</artifactId>
 		<groupId>com.nabla.project</groupId>
+		<artifactId>main</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
 		<relativePath>../main/pom.xml</relativePath>
 	</parent>
@@ -13,7 +13,7 @@
 	<packaging>pom</packaging>
 	<name>Nabla Databases</name>
 	<description>The Databases pom file is a superpom to centralize all third parties</description>
-	<url>http://maven.nabla.mobi/dependencies/customs/main/databases</url>
+	<url>http://maven.albandrieu.com/dependencies/customs/main/databases</url>
 
 	<scm>
 		<connection>scm:git:ssh://git@github.com/AlbanAndrieu/nabla-databases.git</connection>
